@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "demo"
+name = "sample"
 version = "0.1.0"
 description = ""
 authors = ["atusy <30277794+atusy@users.noreply.github.com>"]
