@@ -10,6 +10,6 @@ poetry install
 git config --local commit.template .gitmessage
 
 # Apply Git Hooks
-rsync -a .hooks/ .git/hooks
+rsync -a .hooks/ .git/hooks/
 ```
 
