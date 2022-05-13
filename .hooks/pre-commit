@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# stagingされているpythonファイル一覧をnull文字区切りで取得
-readonly STAGED_PY="$( git diff --cached --name-only -z '*.py' )"
+# stagingされているpythonがなければ、フックを終了
+if [[ -z "$( git diff --cached --name-only '*.py' )" ]]; then
+  exit 0
+fi
 
 # stagingされているpythonファイルがあればlintする
-if [[ -n "$STAGED_PY" ]]; then
-  echo -n "$STAGED_PY" | xargs -0 poetry run black --check
-fi
+git diff --cached --name-only -z '*.py' | xargs -0 poetry run black --check
