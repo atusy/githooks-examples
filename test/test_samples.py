@@ -1,7 +1,7 @@
 import pytest
 
-from sample import samples
+from sample import functions
 
 
 def test_f():
-    assert samples.f() == 0
+    assert functions.f() == 0
